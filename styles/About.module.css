@@ -18,16 +18,16 @@
   animation: rotateAnimation 5s linear infinite;
 }
 .card {
-  min-height: 240px;
-  background-color: transparent;
-  color: rgb(85, 194, 195);
-  color: #f9d675;
-  border: 0.5px solid #f4af1b;
-  border-radius: 10px 50px;
+  min-height: 240px !important;
+  background-color: transparent !important;
+  color: rgb(85, 194, 195) !important;
+  color: #f9d675 !important;
+  border: 0.5px solid #f4af1b !important;
+  border-radius: 10px 50px !important;
 
   box-shadow: rgba(85, 194, 195, 0.4) 5px 5px, rgba(85, 194, 195, 0.3) 10px 10px,
     rgba(85, 194, 195, 0.2) 15px 15px, rgba(85, 194, 195, 0.1) 20px 20px,
-    rgba(85, 194, 195, 0.05) 25px 25px;
+    rgba(85, 194, 195, 0.05) 25px 25px !important;
   /* box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px; */
 }
 
@@ -40,44 +40,44 @@
   }
 }
 .card:hover {
-color: rgb(241, 23, 187);
-  color: #f9d675;
-  border: 5px solid #f4af1b;
-  border-radius: 10px 50px;
+color: rgb(241, 23, 187) !important;
+  color: #f9d675 !important;
+  border: 5px solid #f4af1b !important;
+  border-radius: 10px 50px !important;
   box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
     rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px;
+    rgba(240, 46, 170, 0.05) 25px 25px !important;
 }
 
 .cardAbout {
-  background: transparent;
-  backdrop-filter: blur(10px);
-  border: 0.5px solid #f4af1b;
+  background: transparent !important;
+  backdrop-filter: blur(10px) !important;
+  border: 0.5px solid #f4af1b !important;
   box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
     rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px;
+    rgba(240, 46, 170, 0.05) 25px 25px !important;
 
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px) !important;
 }
 
 .cardAbout:hover {
-  background: rgb(77, 95, 95);
+  background: rgb(77, 95, 95) !important;
 }
 
 
 .cardcontact {
-  background: transparent;
-  backdrop-filter: blur(10px);
-  border: 0.5px solid #f4af1b;
+  background: transparent !important;
+  backdrop-filter: blur(10px) !important;
+  border: 0.5px solid #f4af1b !important;
   box-shadow: rgba(85, 194, 195, 0.4) 5px 5px, rgba(85, 194, 195, 0.3) 10px 10px,
   rgba(85, 194, 195, 0.2) 15px 15px, rgba(85, 194, 195, 0.1) 20px 20px,
-  rgba(85, 194, 195, 0.05) 25px 25px;
+  rgba(85, 194, 195, 0.05) 25px 25px !important;
 
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px) !important;
 }
 
 .cardcontact:hover {
-  background: rgba(244, 175, 27,.3);
+  background: rgba(244, 175, 27,.3) !important;
 }
 .cardheadershadow{box-shadow: rgba(85, 194, 195, 0.4) 5px 5px, rgba(85, 194, 195, 0.3) 10px 10px,
   rgba(85, 194, 195, 0.2) 15px 15px, rgba(85, 194, 195, 0.1) 20px 20px,
@@ -169,13 +169,13 @@ color: rgb(241, 23, 187);
 
 
 .cardwhatioffer {
-  background: transparent;
-  backdrop-filter: blur(10px);
-  border: 0.5px solid #f4af1b;
+  background: transparent !important;
+  backdrop-filter: blur(10px) !important;
+  border: 0.5px solid #f4af1b !important;
   box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
     rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
-    rgba(240, 46, 170, 0.05) 25px 25px;
+    rgba(240, 46, 170, 0.05) 25px 25px !important;
 
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px) !important;
 }
 

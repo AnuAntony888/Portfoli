@@ -12,7 +12,8 @@ import TextField from "@mui/material/TextField";
 import CardHeader from "@mui/material/CardHeader";
 export function HomeCard(props) {
   return (
-    <Card className={styles.card}>
+    <Card className={styles.card}
+   >
       <CardContent>
         <div data-aos="zoom-in">
           <TypographyText
