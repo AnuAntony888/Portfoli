@@ -1,0 +1,181 @@
+.ab {
+  color: beige;
+  background-color: chocolate;
+}
+.aboutimg {
+  animation: rotatexAnimation 5s linear infinite;
+}
+@keyframes rotatexAnimation {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.rotate {
+  animation: rotateAnimation 5s linear infinite;
+}
+.card {
+  min-height: 240px;
+  background-color: transparent;
+  color: rgb(85, 194, 195);
+  color: #f9d675;
+  border: 0.5px solid #f4af1b;
+  border-radius: 10px 50px;
+
+  box-shadow: rgba(85, 194, 195, 0.4) 5px 5px, rgba(85, 194, 195, 0.3) 10px 10px,
+    rgba(85, 194, 195, 0.2) 15px 15px, rgba(85, 194, 195, 0.1) 20px 20px,
+    rgba(85, 194, 195, 0.05) 25px 25px;
+  /* box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px; */
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotatey(0deg);
+  }
+  to {
+    transform: rotateY(-90deg);
+  }
+}
+.card:hover {
+color: rgb(241, 23, 187);
+  color: #f9d675;
+  border: 5px solid #f4af1b;
+  border-radius: 10px 50px;
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px;
+}
+
+.cardAbout {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border: 0.5px solid #f4af1b;
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px;
+
+  backdrop-filter: blur(20px);
+}
+
+.cardAbout:hover {
+  background: rgb(77, 95, 95);
+}
+
+
+.cardcontact {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border: 0.5px solid #f4af1b;
+  box-shadow: rgba(85, 194, 195, 0.4) 5px 5px, rgba(85, 194, 195, 0.3) 10px 10px,
+  rgba(85, 194, 195, 0.2) 15px 15px, rgba(85, 194, 195, 0.1) 20px 20px,
+  rgba(85, 194, 195, 0.05) 25px 25px;
+
+  backdrop-filter: blur(20px);
+}
+
+.cardcontact:hover {
+  background: rgba(244, 175, 27,.3);
+}
+.cardheadershadow{box-shadow: rgba(85, 194, 195, 0.4) 5px 5px, rgba(85, 194, 195, 0.3) 10px 10px,
+  rgba(85, 194, 195, 0.2) 15px 15px, rgba(85, 194, 195, 0.1) 20px 20px,
+  rgba(85, 194, 195, 0.05) 25px 25px;}
+
+.aboutimg2:hover {
+  -webkit-animation-name: wobble;
+  animation-name: wobble;
+  -webkit-animation-duration: 0.8s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-transform-origin: 50% 100%;
+}
+
+@-webkit-keyframes wobble {
+  0% {
+    -webkit-transform: none;
+    transform: none;
+  }
+
+  15% {
+    -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+
+  30% {
+    -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+
+  45% {
+    -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+
+  60% {
+    -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes wobble {
+  0% {
+    -webkit-transform: none;
+    transform: none;
+  }
+
+  15% {
+    -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+
+  30% {
+    -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+
+  45% {
+    -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+
+  60% {
+    -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  75% {
+    -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+
+
+.cardwhatioffer {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border: 0.5px solid #f4af1b;
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px;
+
+  backdrop-filter: blur(20px);
+}
+

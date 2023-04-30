@@ -1,0 +1,16 @@
+.textfielsttyles{
+
+   width: 100%;
+   padding: 1.5rem;
+   background: transparent;
+   border-radius: .5rem;
+   border:2px solid #f4af1b;
+   resize: none;
+   color:#f4af1b;
+   color: rgba(244, 241, 241, 0.6);
+   /* color: rgba(244, 175, 27,0.3); */
+}
+
+.footerimage{
+
+}
