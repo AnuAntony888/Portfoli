@@ -1,14 +1,15 @@
+import React from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
-import styles from "../../styles/About.module.css";
-import IconButton from '@mui/material/IconButton';
-import CardMedia from '@mui/material/CardMedia';
-import TextField from '@mui/material/TextField';
-import CardHeader from '@mui/material/CardHeader';
+import styles from "../styles/About.module.css";
+import IconButton from "@mui/material/IconButton";
+import CardMedia from "@mui/material/CardMedia";
+import TextField from "@mui/material/TextField";
+import CardHeader from "@mui/material/CardHeader";
 export function HomeCard(props) {
   return (
     <Card className={styles.card}>
@@ -65,24 +66,29 @@ export function TypographyText(props) {
 }
 
 export function TextfieldType(props) {
-  return(<>
-  <TextField sx={{border:'1px solid #f4af1b',color:'yellowgreen',bgcolor:'white'}}
-  name={props.name}
-  type={props.type}
-  label={props.label}
-  fullWidth
-  />
-  </>)
+  return (
+    <>
+      <TextField
+        sx={{
+          border: "1px solid #f4af1b",
+          color: "yellowgreen",
+          bgcolor: "white",
+        }}
+        name={props.name}
+        type={props.type}
+        label={props.label}
+        fullWidth
+      />
+    </>
+  );
 }
 
 export function AboutCard(props) {
   return (
     <Card className={styles.cardAbout}>
-        <CardMedia>
-     <IconButton>
-      {props.IconButtoncontent}
-     </IconButton>
-     </CardMedia>
+      <CardMedia>
+        <IconButton>{props.IconButtoncontent}</IconButton>
+      </CardMedia>
       <CardContent>
         <div data-aos="zoom-in">
           <TypographyText
@@ -112,16 +118,12 @@ export function AboutCard(props) {
   );
 }
 
-
-
 export function ContactCard(props) {
   return (
     <Card className={styles.cardcontact}>
-        <CardMedia>
-     <IconButton>
-      {props.IconButtoncontent}
-     </IconButton>
-     </CardMedia>
+      <CardMedia>
+        <IconButton>{props.IconButtoncontent}</IconButton>
+      </CardMedia>
       <CardContent>
         <div data-aos="zoom-in">
           <TypographyText
@@ -133,55 +135,54 @@ export function ContactCard(props) {
             Typography={props.Typography}
           />
         </div>
-      
-          <TypographyText
-            fontSize="14"
-            component="div"
-            color={"white"}
-            fontWeight={"bolder"}
-            Typography={props.Typographybody}
-          />
-        <a href={props.href} style={{color:'#FFA62B'}}>Send a message</a>
+
+        <TypographyText
+          fontSize="14"
+          component="div"
+          color={"white"}
+          fontWeight={"bolder"}
+          Typography={props.Typographybody}
+        />
+        <a href={props.href} style={{ color: "#FFA62B" }}>
+          Send a message
+        </a>
       </CardContent>
     </Card>
   );
 }
 
 export function Testmonialcard(props) {
-  return(
-    <Card sx={{p:'5%',bgcolor:'transparent',margin:'auto'}}>
-      
-        <CardMedia   
-         component="img"
-sx={{width:'50%',margin:'auto'}}
+  return (
+    <Card sx={{ p: "5%", bgcolor: "transparent", margin: "auto" }}>
+      <CardMedia
+        component="img"
+        sx={{ width: "50%", margin: "auto" }}
         image={props.image}
         alt="Paella dish"
-        />
-     
-      </Card>
-  )
+      />
+    </Card>
+  );
 }
 
 export function Whatioffercard(props) {
-  return(
+  return (
     <Card className={styles.cardwhatioffer}>
-      <CardHeader 
-        title={  
-        <div data-aos="zoom-in">
-          <TypographyText
-            variant="h5"
-            component="div"
-            color={"#FFA62B"}
-            fontWeight={"bolder"}
-            className={props.className}
-            Typography={props.Typography}
-          />
-        </div>
+      <CardHeader
+        title={
+          <div data-aos="zoom-in">
+            <TypographyText
+              variant="h5"
+              component="div"
+              color={"#FFA62B"}
+              fontWeight={"bolder"}
+              className={props.className}
+              Typography={props.Typography}
+            />
+          </div>
         }
-    className={styles.cardheadershadow}
- />
+        className={styles.cardheadershadow}
+      />
       <CardContent>
-
         <div
           data-aos="fade-right"
           data-aos-offset="300"
@@ -191,29 +192,27 @@ export function Whatioffercard(props) {
             fontSize="14"
             component="div"
             color={"white"}
-            textAlign={'left'}
+            textAlign={"left"}
             fontWeight={"bolder"}
             Typography={props.Typographybody}
           />
         </div>
       </CardContent>
     </Card>
-  )}
+  );
+}
 
-
-
-
-  export function Projectcard(props) {
-    return(
-      <Card className={styles.card} sx={{height:'400px'}}>
-            <CardMedia
-             component="img"
-             alt="green iguana"
+export function Projectcard(props) {
+  return (
+    <Card className={styles.card} sx={{ height: "400px" }}>
+      <CardMedia
+        component="img"
+        alt="green iguana"
         image={props.image}
         title="green iguana"
-        sx={{height:'280px'}}
+        sx={{ height: "280px" }}
       />
-        <CardContent>
+      <CardContent>
         <div data-aos="zoom-in">
           <TypographyText
             variant="h6"
@@ -224,7 +223,7 @@ export function Whatioffercard(props) {
             Typography={props.Typography}
           />
         </div>
-      
-        </CardContent>
-      </Card>
-    )}
+      </CardContent>
+    </Card>
+  );
+}

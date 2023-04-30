@@ -6,12 +6,12 @@ import AOS from "aos";
 import styles from "../styles/About.module.css";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { HomeCard, TypographyText } from "./Reuse/Reuse";
+import { HomeCard, TypographyText } from "../Reuse/Reuse";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-
+import Button from "@mui/material/Button";
 const HomeContent = () => {
   const isSmallScreen = useMediaQuery("(max-width:600px)");
   useEffect(() => {
@@ -58,29 +58,37 @@ const HomeContent = () => {
                 Typography={<>Full-Stack Devloper</>}
               />
             </div>
-            <div className="footer_socials">
-              <a
-                href="https://www.linkedin.com/in/anuantonythelakkadan/"
-                className="social"
-                target="_blank"
-              >
-                <LinkedInIcon sx={{ color: "orange" }} />
-              </a>
-              <a
-                href="https://github.com/AnuAntony888"
-                className="social"
-                target="_blank"
-              >
-                <GitHubIcon sx={{ color: "orange" }} />
-              </a>
-              <a
-                href="https://wa.me/916238192992"
-                className="social"
-                target="_blank"
-              >
-                <WhatsAppIcon sx={{ color: "orange" }} />
-              </a>
+
+            <div data-aos="zoom-in">
+              <div className="footer_socials">
+                <a
+                  href="https://www.linkedin.com/in/anuantonythelakkadan/"
+                  className="social"
+                  target="_blank"
+                >
+                  <LinkedInIcon sx={{ color: "orange" }} />
+                </a>
+                <a
+                  href="https://github.com/AnuAntony888"
+                  className="social"
+                  target="_blank"
+                >
+                  <GitHubIcon sx={{ color: "orange" }} />
+                </a>
+                <a
+                  href="https://wa.me/916238192992"
+                  className="social"
+                  target="_blank"
+                >
+                  <WhatsAppIcon sx={{ color: "orange" }} />
+                </a>
+              </div>
             </div>
+            <br />
+            <div data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+
+</div>
+
           </Grid>
         </Grid>
         <Grid container spacing={10} sx={{ p: "10%" }}>

@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import styles from "../styles/About.module.css";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { Testmonialcard, TypographyText } from "./Reuse/Reuse";
+import { Testmonialcard, TypographyText } from "../Reuse/Reuse";
 const Testmonials = () => {
   const isSmallScreen = useMediaQuery("(max-width:769px)");
   return (

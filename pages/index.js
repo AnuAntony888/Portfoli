@@ -14,7 +14,7 @@ import Script from 'next/script'
 
 
 export default function Home() {
-  return (<>
+  return (<div>
 
 <HomeContent/>
 <Aboutme/>
@@ -23,7 +23,7 @@ export default function Home() {
 <Project/>
 <Testmonials/>
 <Contact/>
-</>
+</div>
  
   )
 }

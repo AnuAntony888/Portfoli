@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { TypographyText } from '../pages/Reuse/Reuse';
+import { TypographyText } from '../Reuse/Reuse';
 import styles from '../styles/Contact.module.css'
 import {navItems} from './Header'
 import Button from "@mui/material/Button";

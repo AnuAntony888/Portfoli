@@ -5,7 +5,7 @@ import styles from "../../styles/About.module.css";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import WorkIcon from "@mui/icons-material/Work";
 import { VscFolderLibrary } from "react-icons/vsc";
-import { AboutCard, TypographyText } from "../Reuse/Reuse";
+import { AboutCard, TypographyText } from "../../Reuse/Reuse";
 import { AiTwotoneSafetyCertificate } from "react-icons/ai";
 import Image from "next/image";
 const Aboutme = () => {
@@ -27,6 +27,7 @@ const Aboutme = () => {
               src="/about.png"
               className={styles.aboutimg}
               width={isSmallScreen ? (isSmallScreen2 ? "50%" : "60%") : ""}
+              alt=""
             />
           </Grid>
         </Grid>

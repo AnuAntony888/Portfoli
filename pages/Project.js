@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import styles from "../styles/About.module.css";
 import Card from "@mui/material/Card";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { Projectcard, TypographyText,  } from "./Reuse/Reuse";
+import { Projectcard, TypographyText,  } from "../Reuse/Reuse";
 
 const Project = () => {
     const isSmallScreen = useMediaQuery("(max-width:769px)");

@@ -13,7 +13,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { VscFolderLibrary } from "react-icons/vsc";
 
 import { AiTwotoneSafetyCertificate } from "react-icons/ai";
-import { AboutCard, ContactCard, TypographyText } from "./Reuse/Reuse";
+import { AboutCard, ContactCard, TypographyText } from "../Reuse/Reuse";
 const Contact = () => {
   const form = useRef();
 
