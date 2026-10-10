@@ -1,24 +1,28 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
 import Box from "@mui/material/Box";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import TextareaAutosize from "@mui/base/TextareaAutosize";
-import TextField from "@mui/material/TextField";
+import Alert from "@mui/material/Alert";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import SendIcon from "@mui/icons-material/Send";
 import styles from "../styles/Contact.module.css";
-import MailIcon from '@mui/icons-material/Mail';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import { VscFolderLibrary } from "react-icons/vsc";
+import aboutStyles from "../styles/About.module.css";
+import { ContactCard } from "../Reuse/Reuse";
 
-import { AiTwotoneSafetyCertificate } from "react-icons/ai";
-import { AboutCard, ContactCard, TypographyText } from "../Reuse/Reuse";
 const Contact = () => {
   const form = useRef();
+  const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setStatusMessage({ type: "", text: "" });
 
     emailjs
       .sendForm(
@@ -29,126 +33,216 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          console.log(result.text, "console.text");
+          setIsSubmitting(false);
+          setStatusMessage({
+            type: "success",
+            text: "Thank you! Your message has been sent successfully. I will get back to you shortly.",
+          });
+          e.target.reset();
         },
         (error) => {
-          console.log(error.text);
+          setIsSubmitting(false);
+          setStatusMessage({
+            type: "error",
+            text: "Oops, something went wrong sending your message. Please reach out directly via anuantony.t.v@gmail.com or WhatsApp.",
+          });
+          console.error(error);
         }
       );
-    e.target.reset();
   };
-  const isSmallScreen = useMediaQuery("(max-width:769px)");
+
   return (
-    <div>
-      <Box id='contactme'>
-        <Grid
-          container
-          spacing={10}
-          sx={{ pl: "10%", pr: "10%", pt: "5%", pb: "10%" }}
-        >
-          <Grid item xs={12}>
-            <TypographyText Typography={"Get In Touch"} color="white" />
-            <TypographyText
-              Typography={"Contact Me"}
-              color="#f4af1b"
-              variant={!isSmallScreen ? "h2" : "h5"}
-            />
-          </Grid>
-          <Grid item lg={4} md={4} sm={12} xs={12}>
-            <Grid container spacing={10}>
-            {Data.map((data, index) => (
-            <Grid item  xs={12} key={index}>
-              <ContactCard
-                IconButtoncontent={data.IconButtoncontent}
-                Typography={data.Typography}
-                Typographybody={data.Typographybody}
-                href={data.href}
-              />
-            </Grid>
-          ))}
-            </Grid>
-          </Grid>
-          <Grid item lg={8} md={8} sm={12} xs={12}>
-            <Box>
-              <Grid container spacing={10}>
-                <Grid item xs={12}>
-                  <form action="" ref={form} onSubmit={sendEmail}>
-                    <Grid item xs={12} sx={{ pb: "2%" }}>
-                      <input
-                        fullWidth
-                        id="fullWidth"
-                        type="text"
-                        placeholder="Your Full Name"
-                        name="name"
-                        required
-                        className={styles.textfielsttyles}
-                      />
-                    </Grid>
-                    <Grid item xs={12} sx={{ pb: "2%" }}>
-                      <input
-                        fullWidth
-                        type="email"
-                        placeholder="Your Email"
-                        name="email"
-                        required
-                        className={styles.textfielsttyles}
-                      />
-                    </Grid>
-                    <Grid item xs={12} sx={{ pb: "2%" }}>
-                      <textarea
-                        placeholder="Your message"
-                        name="message"
-                        rows="7"
-                        className={styles.textfielsttyles}
-                        required
-                      />
-                    </Grid>
-                    <Grid item xs={12} sx={{ pb: "2%" }}>
-                      <Button
-                        variant="contained"
-                        type="submit"
-                        sx={{
-                          bgcolor: "#f4af1b",
-                          color: "black",
-                          fontWeight: "bolder",
-                          border: "1px solid #f4af1b",
-                        }}
-                      >
-                        Send Message
-                      </Button>
-                    </Grid>
-                  </form>
+    <Box id="contactme" sx={{ pt: { xs: 8, md: 10 }, pb: { xs: 6, md: 8 }, px: { xs: 2.5, sm: 5, md: 8 } }}>
+      <Box sx={{ maxWidth: 1100, mx: "auto" }}>
+        {/* Section Header */}
+        <Box className={aboutStyles.sectionHeader} data-aos="fade-up" sx={{ mb: { xs: 3.5, md: 4.5 } }}>
+          <Typography className={aboutStyles.sectionSubtitle}>
+            GET IN TOUCH
+          </Typography>
+          <Typography className={aboutStyles.sectionTitle}>
+            Contact <span style={{ color: "#f4af1b" }}>Me</span>
+          </Typography>
+        </Box>
+
+        <Grid container spacing={3.5} alignItems="flex-start">
+          {/* Contact Direct Cards */}
+          <Grid item xs={12} md={5} data-aos="fade-right">
+            <Grid container spacing={2}>
+              {ContactMethods.map((item, index) => (
+                <Grid item xs={12} sm={6} md={12} key={index}>
+                  <ContactCard
+                    IconButtoncontent={item.icon}
+                    Typography={item.title}
+                    Typographybody={item.body}
+                    href={item.href}
+                    target={item.target}
+                    btnText={item.btnText}
+                  />
                 </Grid>
-              </Grid>
+              ))}
+            </Grid>
+          </Grid>
+
+          {/* Contact Form */}
+          <Grid item xs={12} md={7} data-aos="fade-left">
+            <Box
+              sx={{
+                bgcolor: "rgba(20, 22, 34, 0.75)",
+                backdropFilter: "blur(14px)",
+                border: "1px solid rgba(244, 175, 27, 0.25)",
+                borderRadius: "16px",
+                p: { xs: 2.5, md: 3.5 },
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.5)",
+              }}
+            >
+              <Typography
+                variant="h5"
+                sx={{
+                  color: "#ffffff",
+                  fontWeight: 800,
+                  fontSize: { xs: "1.15rem", md: "1.25rem" },
+                  mb: 0.8,
+                  textAlign: "left",
+                }}
+              >
+                Send Me a Message
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "#a4b0be",
+                  fontSize: "0.85rem",
+                  mb: 2.2,
+                  textAlign: "left",
+                }}
+              >
+                Whether you have an opportunity, a project proposal, or a question, feel free to drop a message!
+              </Typography>
+
+              {statusMessage.text && (
+                <Alert
+                  severity={statusMessage.type}
+                  sx={{
+                    mb: 2.5,
+                    borderRadius: "10px",
+                    bgcolor:
+                      statusMessage.type === "success"
+                        ? "rgba(46, 125, 50, 0.2)"
+                        : "rgba(211, 47, 47, 0.2)",
+                    color: statusMessage.type === "success" ? "#a3e635" : "#fca5a5",
+                    border: `1px solid ${
+                      statusMessage.type === "success" ? "#4ade80" : "#f87171"
+                    }`,
+                  }}
+                >
+                  {statusMessage.text}
+                </Alert>
+              )}
+
+              <form ref={form} onSubmit={sendEmail}>
+                <Box sx={{ mb: 1.8 }}>
+                  <input
+                    type="text"
+                    placeholder="Your Full Name"
+                    name="name"
+                    required
+                    className={styles.textFieldStyles}
+                  />
+                </Box>
+
+                <Box sx={{ mb: 1.8 }}>
+                  <input
+                    type="email"
+                    placeholder="Your Email Address"
+                    name="email"
+                    required
+                    className={styles.textFieldStyles}
+                  />
+                </Box>
+
+                <Box sx={{ mb: 1.8 }}>
+                  <input
+                    type="text"
+                    placeholder="Subject / Project Role"
+                    name="subject"
+                    className={styles.textFieldStyles}
+                  />
+                </Box>
+
+                <Box sx={{ mb: 2.2 }}>
+                  <textarea
+                    placeholder="Your Message..."
+                    name="message"
+                    rows={4}
+                    required
+                    className={styles.textFieldStyles}
+                  />
+                </Box>
+
+                <Button
+                  variant="contained"
+                  type="submit"
+                  disabled={isSubmitting}
+                  endIcon={<SendIcon sx={{ fontSize: "1.1rem" }} />}
+                  sx={{
+                    bgcolor: "#f4af1b",
+                    color: "#000000",
+                    fontWeight: 700,
+                    fontSize: "0.92rem",
+                    py: 1,
+                    px: 3.2,
+                    borderRadius: "10px",
+                    textTransform: "none",
+                    boxShadow: "0 4px 16px rgba(244, 175, 27, 0.35)",
+                    "&:hover": {
+                      bgcolor: "#e5a110",
+                      boxShadow: "0 6px 20px rgba(244, 175, 27, 0.5)",
+                    },
+                  }}
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </Button>
+              </form>
             </Box>
           </Grid>
         </Grid>
       </Box>
-    </div>
+    </Box>
   );
 };
 
 export default Contact;
-const Data = [
-  {
-    IconButtoncontent: (
-      
-        <MailIcon sx={{ color: "#f4af1b" }} />
-      
-    ),
-    Typography: "Email",
-    Typographybody: "anuantony.t.v@gamil.com",
-    href:'mailto:anuantony.t.v@gamil.com.com'
-  },
-  {
-    IconButtoncontent: (
-      
-        <WhatsAppIcon style={{ color: "#FFA62B" }} />
-      
-    ),
-    Typography: "WhatsApp",
-    Typographybody: " +91 6238192992",
-    href:'https://wa.me/916238192992'
-  },
 
+const ContactMethods = [
+  {
+    icon: <MailOutlineIcon sx={{ color: "#f4af1b", fontSize: 22 }} />,
+    title: "Email",
+    body: "anuantony.t.v@gmail.com",
+    href: "mailto:anuantony.t.v@gmail.com",
+    btnText: "Send Email",
+  },
+  {
+    icon: <WhatsAppIcon sx={{ color: "#f4af1b", fontSize: 22 }} />,
+    title: "WhatsApp",
+    body: "+91 62381 92992",
+    href: "https://wa.me/916238192992",
+    target: "_blank",
+    btnText: "Chat on WhatsApp",
+  },
+  {
+    icon: <LinkedInIcon sx={{ color: "#f4af1b", fontSize: 22 }} />,
+    title: "LinkedIn",
+    body: "linkedin.com/in/anuantonythelakkadan",
+    href: "https://www.linkedin.com/in/anuantonythelakkadan/",
+    target: "_blank",
+    btnText: "Connect on LinkedIn",
+  },
+  {
+    icon: <LocationOnIcon sx={{ color: "#f4af1b", fontSize: 22 }} />,
+    title: "Location",
+    body: "Kochi, Kerala, India",
+    href: "https://maps.google.com/?q=Kochi,Kerala,India",
+    target: "_blank",
+    btnText: "View on Map",
+  },
 ];
