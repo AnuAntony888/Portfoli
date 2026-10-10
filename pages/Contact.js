@@ -87,12 +87,12 @@ const Contact = () => {
           <Grid item xs={12} md={7} data-aos="fade-left">
             <Box
               sx={{
-                bgcolor: "rgba(20, 22, 34, 0.75)",
+                bgcolor: "var(--bg-card, rgba(20, 22, 34, 0.75))",
                 backdropFilter: "blur(14px)",
-                border: "1px solid rgba(244, 175, 27, 0.25)",
+                border: "1px solid var(--border-card, rgba(244, 175, 27, 0.25))",
                 borderRadius: "16px",
                 p: { xs: 2.5, md: 3.5 },
-                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.5)",
+                boxShadow: "var(--shadow-card, 0 10px 30px rgba(0, 0, 0, 0.5))",
               }}
             >
               <Typography

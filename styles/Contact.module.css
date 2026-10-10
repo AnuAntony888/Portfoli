@@ -22,6 +22,22 @@
   color: #718096;
 }
 
+:global([data-theme="light"]) .textFieldStyles {
+  background: #ffffff;
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .textFieldStyles:focus {
+  border-color: #d97706;
+  box-shadow: 0 0 14px rgba(217, 119, 6, 0.25);
+  background: #ffffff;
+}
+
+:global([data-theme="light"]) .textFieldStyles::placeholder {
+  color: #94a3b8;
+}
+
 .textfielsttyles {
   width: 100%;
   padding: 1rem 1.25rem;
@@ -43,4 +59,19 @@
 
 .textfielsttyles::placeholder {
   color: #718096;
+}
+
+:global([data-theme="light"]) .textfielsttyles {
+  background: #ffffff;
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  color: #0f172a;
+}
+
+:global([data-theme="light"]) .textfielsttyles:focus {
+  border-color: #d97706;
+  box-shadow: 0 0 16px rgba(217, 119, 6, 0.25);
+}
+
+:global([data-theme="light"]) .textfielsttyles::placeholder {
+  color: #94a3b8;
 }

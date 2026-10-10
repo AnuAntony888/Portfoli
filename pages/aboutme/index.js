@@ -41,31 +41,64 @@ const Aboutme = () => {
 
         {/* Detailed Bio & Focus Areas */}
         <Grid container spacing={{ xs: 3.5, md: 5 }} alignItems="center">
-          <Grid item xs={12} md={5} sx={{ textAlign: "center" }} data-aos="fade-right">
+          {/* Developer Overview & Architecture Highlights (No Images) */}
+          <Grid item xs={12} md={5} data-aos="fade-right">
             <Box
               sx={{
-                position: "relative",
-                display: "inline-block",
-                p: { xs: 1.2, sm: 2 },
+                bgcolor: "var(--bg-card, rgba(20, 22, 34, 0.75))",
+                border: "1px solid var(--border-card, rgba(244, 175, 27, 0.28))",
                 borderRadius: "20px",
-                bgcolor: "rgba(20, 22, 34, 0.7)",
-                border: "1px solid rgba(244, 175, 27, 0.3)",
-                maxWidth: { xs: 260, sm: 290, md: 320 },
-                width: "100%",
-                mx: "auto",
+                p: { xs: 2.5, sm: 3 },
+                boxShadow: "var(--shadow-card, 0 8px 30px rgba(0, 0, 0, 0.45))",
+                textAlign: "left",
               }}
             >
-              <img
-                src="/about2.png"
-                alt="Anu Antony Coding"
-                style={{
-                  width: "100%",
-                  maxHeight: "360px",
-                  borderRadius: "14px",
-                  objectFit: "contain",
-                  display: "block",
-                }}
-              />
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 2.5 }}>
+                <Box
+                  sx={{
+                    width: 46,
+                    height: 46,
+                    borderRadius: "12px",
+                    bgcolor: "var(--accent-light, rgba(244, 175, 27, 0.12))",
+                    border: "1px solid var(--accent-border, rgba(244, 175, 27, 0.35))",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "var(--accent, #f4af1b)",
+                    fontSize: "1.15rem",
+                    fontWeight: 900,
+                  }}
+                >
+                  AA
+                </Box>
+                <Box>
+                  <Typography sx={{ fontWeight: 800, fontSize: "1.05rem", color: "var(--text-primary, #ffffff)" }}>
+                    Anu Antony
+                  </Typography>
+                  <Typography sx={{ fontSize: "0.78rem", color: "var(--accent, #f4af1b)", fontWeight: 600 }}>
+                    Software Programmer &amp; React Specialist
+                  </Typography>
+                </Box>
+              </Box>
+
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
+                {[
+                  { label: "Location", val: "Kochi, Kerala, India" },
+                  { label: "Experience", val: "4+ Years in Frontend Engineering" },
+                  { label: "Education", val: "Master of Computer Applications (MCA)" },
+                  { label: "Core Stack", val: "React.js, Redux, Next.js, Capacitor" },
+                  { label: "Methodology", val: "Spec-Driven Development (SDD), Agile" },
+                ].map((item, idx) => (
+                  <Box key={idx} sx={{ pb: 1, borderBottom: idx < 4 ? "1px solid var(--border-card, rgba(244, 175, 27, 0.15))" : "none" }}>
+                    <Typography sx={{ fontSize: "0.72rem", color: "var(--text-muted, #8a94a6)", textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                      {item.label}
+                    </Typography>
+                    <Typography sx={{ fontSize: "0.88rem", fontWeight: 700, color: "var(--text-primary, #ffffff)", mt: 0.2 }}>
+                      {item.val}
+                    </Typography>
+                  </Box>
+                ))}
+              </Box>
             </Box>
           </Grid>
 

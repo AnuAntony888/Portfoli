@@ -30,40 +30,144 @@ const HomeContent = () => {
     <Box sx={{ flexGrow: 1, pt: { xs: 11, sm: 14, md: 18 }, px: { xs: 2, sm: 4, md: 8 } }}>
       {/* Hero Section */}
       <Grid container spacing={{ xs: 4, md: 5 }} alignItems="center" sx={{ maxWidth: 1250, mx: "auto" }}>
-        {/* Left Side: Photo with Floating Badges */}
+        {/* Left Side: Interactive Code Showcase Window (No Images) */}
         <Grid item xs={12} md={5} sx={{ textAlign: "center" }}>
-          <Box className={styles.heroImageContainer} data-aos="fade-up">
-            <img
-              src="/anu.png"
-              alt="Anu Antony - Software Programmer"
-              className={styles.heroImage}
-              style={{
-                width: "100%",
-                maxWidth: "340px",
-                height: "auto",
-                objectFit: "contain",
-                display: "block",
-                margin: "0 auto",
+          <Box
+            data-aos="fade-up"
+            sx={{
+              position: "relative",
+              maxWidth: { xs: 340, sm: 400, md: 440 },
+              mx: "auto",
+            }}
+          >
+            {/* Terminal Card */}
+            <Box
+              sx={{
+                bgcolor: "var(--bg-card, rgba(20, 22, 34, 0.8))",
+                backdropFilter: "blur(16px)",
+                border: "1px solid var(--border-card, rgba(244, 175, 27, 0.3))",
+                borderRadius: "20px",
+                overflow: "hidden",
+                boxShadow: "var(--shadow-card, 0 12px 35px rgba(0, 0, 0, 0.5))",
+                textAlign: "left",
+                transition: "all 0.3s ease",
               }}
-            />
+            >
+              {/* Window Header */}
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  px: 2,
+                  py: 1.2,
+                  borderBottom: "1px solid var(--border-card, rgba(244, 175, 27, 0.2))",
+                  bgcolor: "rgba(0, 0, 0, 0.12)",
+                }}
+              >
+                <Box sx={{ display: "flex", gap: 0.8 }}>
+                  <Box sx={{ width: 11, height: 11, borderRadius: "50%", bgcolor: "#ef4444" }} />
+                  <Box sx={{ width: 11, height: 11, borderRadius: "50%", bgcolor: "#f59e0b" }} />
+                  <Box sx={{ width: 11, height: 11, borderRadius: "50%", bgcolor: "#10b981" }} />
+                </Box>
+                <Typography
+                  sx={{
+                    fontSize: "0.75rem",
+                    fontWeight: 600,
+                    color: "var(--text-muted, #8a94a6)",
+                    letterSpacing: "0.5px",
+                    fontFamily: "monospace",
+                  }}
+                >
+                  developer.ts
+                </Typography>
+                <Box sx={{ width: 40 }} />
+              </Box>
+
+              {/* Window Content */}
+              <Box
+                sx={{
+                  p: { xs: 2, sm: 2.5 },
+                  fontFamily: "'Fira Code', monospace, Consolas, sans-serif",
+                  fontSize: { xs: "0.8rem", sm: "0.88rem" },
+                  lineHeight: 1.6,
+                }}
+              >
+                <Box sx={{ mb: 0.5 }}>
+                  <span style={{ color: "#ec4899" }}>const</span>{" "}
+                  <span style={{ color: "var(--text-primary, #ffffff)", fontWeight: 700 }}>engineer</span>{" "}
+                  <span style={{ color: "#06b6d4" }}>=</span> &#123;
+                </Box>
+                <Box sx={{ pl: 2.5, mb: 0.3 }}>
+                  <span style={{ color: "var(--accent, #f4af1b)" }}>name:</span>{" "}
+                  <span style={{ color: "#10b981" }}>&quot;Anu Antony&quot;</span>,
+                </Box>
+                <Box sx={{ pl: 2.5, mb: 0.3 }}>
+                  <span style={{ color: "var(--accent, #f4af1b)" }}>role:</span>{" "}
+                  <span style={{ color: "#10b981" }}>&quot;React.js Developer&quot;</span>,
+                </Box>
+                <Box sx={{ pl: 2.5, mb: 0.3 }}>
+                  <span style={{ color: "var(--accent, #f4af1b)" }}>experience:</span>{" "}
+                  <span style={{ color: "#3b82f6" }}>&quot;4+ Years&quot;</span>,
+                </Box>
+                <Box sx={{ pl: 2.5, mb: 0.3 }}>
+                  <span style={{ color: "var(--accent, #f4af1b)" }}>stack:</span> [
+                  <span style={{ color: "#10b981" }}>&quot;React&quot;</span>,{" "}
+                  <span style={{ color: "#10b981" }}>&quot;Redux&quot;</span>,{" "}
+                  <span style={{ color: "#10b981" }}>&quot;Next.js&quot;</span>],
+                </Box>
+                <Box sx={{ pl: 2.5, mb: 0.3 }}>
+                  <span style={{ color: "var(--accent, #f4af1b)" }}>mobile:</span>{" "}
+                  <span style={{ color: "#10b981" }}>&quot;Capacitor (iOS/Android)&quot;</span>,
+                </Box>
+                <Box sx={{ pl: 2.5, mb: 0.5 }}>
+                  <span style={{ color: "var(--accent, #f4af1b)" }}>status:</span>{" "}
+                  <span style={{ color: "#3b82f6" }}>&quot;Open to Opportunities 🚀&quot;</span>
+                </Box>
+                <Box>&#125;;</Box>
+              </Box>
+
+              {/* Status bar inside card */}
+              <Box
+                sx={{
+                  px: 2,
+                  py: 1,
+                  borderTop: "1px solid var(--border-card, rgba(244, 175, 27, 0.15))",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  bgcolor: "rgba(0, 0, 0, 0.08)",
+                }}
+              >
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <Box sx={{ width: 8, height: 8, borderRadius: "50%", bgcolor: "#10b981" }} />
+                  <Typography sx={{ fontSize: "0.72rem", color: "var(--text-muted, #8a94a6)", fontWeight: 600 }}>
+                    Enterprise Ready
+                  </Typography>
+                </Box>
+                <Typography sx={{ fontSize: "0.72rem", color: "var(--text-muted, #8a94a6)" }}>
+                  UTF-8 &bull; React 18
+                </Typography>
+              </Box>
+            </Box>
 
             {/* Experience Floating Badge */}
             <Box
               className={styles.badgeCard}
               sx={{
                 position: "absolute",
-                bottom: { xs: -8, sm: 15, md: 20 },
-                left: { xs: 0, sm: "-3%", md: "-5%" },
+                bottom: { xs: -12, sm: -15 },
+                right: { xs: "5%", sm: "-5%" },
               }}
               data-aos="zoom-in"
               data-aos-delay="200"
             >
-              <CodeIcon sx={{ color: "#f4af1b", fontSize: { xs: 20, sm: 26 } }} />
+              <CodeIcon sx={{ color: "var(--accent, #f4af1b)", fontSize: { xs: 20, sm: 26 } }} />
               <Box sx={{ textAlign: "left" }}>
                 <Typography sx={{ fontWeight: 800, fontSize: { xs: "0.8rem", sm: "0.95rem" }, lineHeight: 1.1 }}>
                   4+ Years
                 </Typography>
-                <Typography sx={{ color: "#aaa", fontSize: { xs: "0.68rem", sm: "0.75rem" } }}>
+                <Typography sx={{ color: "var(--text-muted, #aaa)", fontSize: { xs: "0.68rem", sm: "0.75rem" } }}>
                   Dev Experience
                 </Typography>
               </Box>

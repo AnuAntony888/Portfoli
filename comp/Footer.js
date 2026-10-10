@@ -15,11 +15,12 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        backgroundColor: "#08090d",
-        borderTop: "1px solid rgba(244, 175, 27, 0.2)",
+        backgroundColor: "var(--footer-bg, #08090d)",
+        borderTop: "1px solid var(--border-card, rgba(244, 175, 27, 0.2))",
         py: { xs: 4.5, md: 6 },
         px: { xs: 2, sm: 3 },
         mt: { xs: 6, md: 10 },
+        transition: "all 0.3s ease",
       }}
     >
       <Box sx={{ maxWidth: 1100, mx: "auto", textAlign: "center" }}>
