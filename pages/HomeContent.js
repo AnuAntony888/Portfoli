@@ -68,28 +68,6 @@ const HomeContent = () => {
                 </Typography>
               </Box>
             </Box>
-
-            {/* Scale Badge */}
-            <Box
-              className={styles.badgeCard}
-              sx={{
-                position: "absolute",
-                top: { xs: -8, sm: 15, md: 25 },
-                right: { xs: 0, sm: "-3%", md: "-5%" },
-              }}
-              data-aos="zoom-in"
-              data-aos-delay="300"
-            >
-              <PeopleAltIcon sx={{ color: "#f4af1b", fontSize: { xs: 20, sm: 26 } }} />
-              <Box sx={{ textAlign: "left" }}>
-                <Typography sx={{ fontWeight: 800, fontSize: { xs: "0.8rem", sm: "0.95rem" }, lineHeight: 1.1 }}>
-                  35,000+
-                </Typography>
-                <Typography sx={{ color: "#aaa", fontSize: { xs: "0.68rem", sm: "0.75rem" } }}>
-                  Portal Users
-                </Typography>
-              </Box>
-            </Box>
           </Box>
         </Grid>
 
