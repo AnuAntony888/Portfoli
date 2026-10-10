@@ -247,6 +247,27 @@ export function Whatioffercard(props) {
   );
 }
 
+export function Testmonialcard(props) {
+  return (
+    <Card
+      component="img"
+      src={props.image}
+      alt={props.alt || "Achievement or certificate"}
+      className={styles.card}
+      sx={{
+        width: "100%",
+        height: "auto",
+        maxHeight: { xs: 260, sm: 400 },
+        objectFit: "contain",
+        display: "block",
+        mx: "auto",
+        borderRadius: 2,
+        boxShadow: "0 4px 16px rgba(0, 0, 0, 0.35)",
+      }}
+    />
+  );
+}
+
 export function Projectcard(props) {
   return (
     <Card className={styles.projectCard}>
