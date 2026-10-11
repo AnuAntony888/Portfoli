@@ -77,34 +77,6 @@ const Header = () => {
           >
             AA
           </Box>
-          <Box sx={{ textAlign: "left" }}>
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: 800,
-                color: isLight ? "#0f172a" : "#ffffff",
-                lineHeight: 1.1,
-                fontSize: { xs: "0.95rem", sm: "1.1rem" },
-                letterSpacing: "0.5px",
-              }}
-            >
-              ANU{" "}
-              <span style={{ color: isLight ? "#d97706" : "#f4af1b" }}>
-                ANTONY
-              </span>
-            </Typography>
-            <Typography
-              variant="caption"
-              sx={{
-                color: isLight ? "#64748b" : "#aaa",
-                fontSize: { xs: "0.65rem", sm: "0.72rem" },
-                letterSpacing: "0.8px",
-                display: "block",
-              }}
-            >
-              React.js Developer
-            </Typography>
-          </Box>
         </Box>
 
         {/* Navigation & Controls */}
