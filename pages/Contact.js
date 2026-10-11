@@ -14,6 +14,15 @@ import styles from "../styles/Contact.module.css";
 import aboutStyles from "../styles/About.module.css";
 import { ContactCard } from "../Reuse/Reuse";
 
+const EMAILJS_SERVICE_ID =
+  process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_qq81bkj";
+const EMAILJS_TEMPLATE_ID =
+  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_ys0ukli";
+const EMAILJS_PUBLIC_KEY =
+  process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "RmKI3SQPuZ2H8qOd3";
+const RECIPIENT_EMAIL =
+  process.env.NEXT_PUBLIC_TO_EMAIL || "websoullabsanu1@gmail.com";
+
 const Contact = () => {
   const form = useRef();
   const [statusMessage, setStatusMessage] = useState({ type: "", text: "" });
@@ -24,12 +33,27 @@ const Contact = () => {
     setIsSubmitting(true);
     setStatusMessage({ type: "", text: "" });
 
+    // Sync common EmailJS template field variables
+    if (form.current) {
+      const formEl = form.current;
+      const nameVal = formEl.elements["name"]?.value || "";
+      const emailVal = formEl.elements["email"]?.value || "";
+      if (formEl.elements["from_name"]) formEl.elements["from_name"].value = nameVal;
+      if (formEl.elements["user_name"]) formEl.elements["user_name"].value = nameVal;
+      if (formEl.elements["from_email"]) formEl.elements["from_email"].value = emailVal;
+      if (formEl.elements["user_email"]) formEl.elements["user_email"].value = emailVal;
+      if (formEl.elements["reply_to"]) formEl.elements["reply_to"].value = emailVal;
+      if (formEl.elements["to_email"]) formEl.elements["to_email"].value = RECIPIENT_EMAIL;
+      if (formEl.elements["recipient"]) formEl.elements["recipient"].value = RECIPIENT_EMAIL;
+      if (formEl.elements["to_name"]) formEl.elements["to_name"].value = "Anu Antony";
+    }
+
     emailjs
       .sendForm(
-        "service_jyoqnxb",
-        "template_3nxjfjn",
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         form.current,
-        "9zScA-1V-BCm8E_Ck"
+        EMAILJS_PUBLIC_KEY
       )
       .then(
         (result) => {
@@ -38,15 +62,17 @@ const Contact = () => {
             type: "success",
             text: "Thank you! Your message has been sent successfully. I will get back to you shortly.",
           });
-          e.target.reset();
+          if (form.current) {
+            form.current.reset();
+          }
         },
         (error) => {
           setIsSubmitting(false);
           setStatusMessage({
             type: "error",
-            text: "Oops, something went wrong sending your message. Please reach out directly via anuantony.t.v@gmail.com or WhatsApp.",
+            text: `Oops, something went wrong sending your message. Please reach out directly via ${RECIPIENT_EMAIL} or WhatsApp.`,
           });
-          console.error(error);
+          console.error("EmailJS Error:", error);
         }
       );
   };
@@ -140,6 +166,16 @@ const Contact = () => {
               )}
 
               <form ref={form} onSubmit={sendEmail}>
+                {/* Fallback field names for various EmailJS template configurations */}
+                <input type="hidden" name="from_name" />
+                <input type="hidden" name="user_name" />
+                <input type="hidden" name="from_email" />
+                <input type="hidden" name="user_email" />
+                <input type="hidden" name="reply_to" />
+                <input type="hidden" name="to_email" defaultValue={RECIPIENT_EMAIL} />
+                <input type="hidden" name="recipient" defaultValue={RECIPIENT_EMAIL} />
+                <input type="hidden" name="to_name" defaultValue="Anu Antony" />
+
                 <Box sx={{ mb: 1.8 }}>
                   <input
                     type="text"
@@ -217,8 +253,8 @@ const ContactMethods = [
   {
     icon: <MailOutlineIcon sx={{ color: "#f4af1b", fontSize: 22 }} />,
     title: "Email",
-    body: "anuantony.t.v@gmail.com",
-    href: "mailto:anuantony.t.v@gmail.com",
+    body: "websoullabsanu1@gmail.com",
+    href: "mailto:websoullabsanu1@gmail.com",
     btnText: "Send Email",
   },
   {

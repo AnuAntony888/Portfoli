@@ -110,7 +110,7 @@ const Footer = () => {
             <WhatsAppIcon />
           </a>
           <a
-            href="mailto:anuantony.t.v@gmail.com"
+            href="mailto:websoullabsanu1@gmail.com"
             className="social"
             aria-label="Email"
           >
